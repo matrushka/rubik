@@ -24,4 +24,11 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "awesome_print"
   gem.add_development_dependency "minitest"
   gem.add_development_dependency "cane"
+  gem.add_development_dependency "guard"
+  gem.add_development_dependency "rb-inotify"
+  gem.add_development_dependency "rb-fsevent"
+  gem.add_development_dependency "rb-fchange"
+  gem.add_development_dependency "guard-minitest"
+  gem.add_development_dependency "guard-cane"
 end
+
