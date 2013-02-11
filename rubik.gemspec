@@ -20,15 +20,22 @@ Gem::Specification.new do |gem|
   gem.add_dependency "redis"
   gem.add_dependency "sinatra"
   gem.add_dependency "rake"
+  gem.add_dependency "active_support"
+  gem.add_dependency "active_support"
+  gem.add_dependency "mustache"
+  gem.add_dependency "i18n"
+  gem.add_dependency 'multi_json', '~> 1.0'
 
+  gem.add_development_dependency "oj"
   gem.add_development_dependency "awesome_print"
   gem.add_development_dependency "minitest"
   gem.add_development_dependency "cane"
   gem.add_development_dependency "guard"
-  gem.add_development_dependency "rb-inotify"
+  # gem.add_development_dependency "rb-inotify"
   gem.add_development_dependency "rb-fsevent"
-  gem.add_development_dependency "rb-fchange"
+  # gem.add_development_dependency "rb-fchange"
   gem.add_development_dependency "guard-minitest"
   gem.add_development_dependency "guard-cane"
+  gem.add_development_dependency "puma"
 end
 

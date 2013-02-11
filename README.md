@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'rubik'
+    gem 'rubik', git: 'git@github.com:matrushka/rubik.git'
 
 And then execute:
 

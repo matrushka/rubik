@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript" src="{{url}}/assets/d3.js"></script>
+  <script type="text/javascript" src="{{url}}/assets/cubism.js"></script>
+  <link rel="stylesheet" href="{{url}}/assets/style.css">
+</head>
+<body>
+  <script type="text/javascript">
+  var context = cubism.context().step(1e4), // a default context
+      cube = context.cube('{{url}}');
+
+  d3.select("body").selectAll(".axis")
+      .data(["top", "bottom"])
+    .enter().append("div")
+      .attr("class", function(d) { return d + " axis"; })
+      .each(function(d) { d3.select(this).call(context.axis().ticks(12).orient(d)); });
+
+  d3.select("body").append("div")
+      .attr("class", "rule")
+      .call(context.rule());
+
+  context.on("focus", function(i) {
+    d3.selectAll(".value").style("right", i == null ? null : context.size() - i + "px");
+  });
+
+  d3.json("{{url}}/1.0/types", function(error,data) {
+    d3.select("body").selectAll(".horizon")
+      .data(data.map(metric))
+      .enter()
+        .insert("div")
+          .attr("class", "horizon")
+          .call(context.horizon());
+  })
+
+  function metric(key) {
+    return cube.metric("avg(" + key + ")");
+  }
+  </script>
+</body>
+</html>

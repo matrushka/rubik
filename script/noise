@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require File.dirname(__FILE__) + '/../test/boot'
+require 'logger'
+logger = Logger.new(STDOUT)
+while true
+  (1..30).each do |i|
+    val = (Random.rand * 100).round(2)
+    timestamp = Rubik.push "test-#{i}", val
+    logger.info "test-#{i} => #{timestamp} => #{val}"
+  end
+  sleep 1
+end

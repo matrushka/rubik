@@ -1,3 +1,8 @@
+# Prequisities
 require 'rubygems'
 require 'bundler'
-Bundler.require(:default)
+# Load gems
+Bundler.require(:default, :development)
+# Configure redis
+$redis = Redis.new
+require 'awesome_print'
