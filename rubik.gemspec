@@ -20,8 +20,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency "redis"
   gem.add_dependency "sinatra"
   gem.add_dependency "rake"
-  gem.add_dependency "active_support"
-  gem.add_dependency "active_support"
+  gem.add_dependency "activesupport"
+  gem.add_dependency "slim"
   gem.add_dependency "mustache"
   gem.add_dependency "i18n"
   gem.add_dependency 'multi_json', '~> 1.0'

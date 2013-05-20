@@ -1,4 +1,4 @@
-require "./lib/version"
+require "version"
 require 'active_support/concern'
 require 'redis'
 require 'multi_json'
