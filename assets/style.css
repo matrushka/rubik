@@ -100,5 +100,6 @@ header {
 @media all and (max-width: 1439px) {
   body { margin: 0px auto; }
   .axis { position: static; }
+  .axis.bottom { display: none; }
   .axis.top, .axis.bottom { padding: 0; }
 }

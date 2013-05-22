@@ -1,6 +1,6 @@
 # Rubik
 
-Rubik is a gem to track realtime quantitive metrics such as the average duration of a method executed. Rubik is not suitable for long term metric collection since it 
+Rubik is a gem to track realtime quantitive metrics such as the average duration of a method executed. Rubik is not suitable for long term metric collection since it
 
 ## Installation
 
@@ -11,10 +11,6 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install rubik
 
 ## Usage
 ### Configuration
@@ -58,6 +54,13 @@ Just use the Rubik.push_metric method to push your custom metric.
 
 ## Monitoring
 ### Rails 3+
+
+Add slim to your Gemfile
+
+```ruby
+gem 'slim'
+```
+
 Add the following to your  "config/routes.rb"
 
 ```ruby
@@ -68,7 +71,15 @@ mount Rubik::Server => '/rubik'
 And then you can use the mounted route to see the monitoring dashboard.
 
 ### Stand alone
-Here's an example config.ru for booting Rubik::Server in your choice of Rack Server
+
+Prepare a Gemfile for the standalone version
+
+```ruby
+gem 'rubik', git: 'git@github.com:matrushka/rubik.git'
+gem 'slim'
+```
+
+Fill the config.ru file for booting Rubik::Server in your choice of Rack Server
 
 ```ruby
 require 'rubik/server'
@@ -83,6 +94,7 @@ run Rubik::Server.new
 * Implement a configruation system for changing sample size
 * Calculate estimated size of a full metric in Redis for docs
 * Think about a way to group metrics and split them into seperate dashboards
+* Consider using bitmaps instead of lua and sets (http://blog.getspool.com/2011/11/29/fast-easy-realtime-metrics-using-redis-bitmaps/ )
 
 ## Contributing
 

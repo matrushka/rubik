@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Rubik::VERSION
   gem.authors       = ["Baris Gumustas"]
   gem.email         = ["barisgumustas@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = "Rubik is a gem to track realtime quantitive metrics such as the average duration of a method execution."
   gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/matrushka/rubik"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -21,7 +21,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "sinatra"
   gem.add_dependency "rake"
   gem.add_dependency "activesupport"
-  gem.add_dependency "slim"
   gem.add_dependency "mustache"
   gem.add_dependency "i18n"
   gem.add_dependency 'multi_json', '~> 1.0'
@@ -31,6 +30,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "minitest"
   gem.add_development_dependency "cane"
   gem.add_development_dependency "guard"
+  gem.add_development_dependency "slim"
   # gem.add_development_dependency "rb-inotify"
   gem.add_development_dependency "rb-fsevent"
   # gem.add_development_dependency "rb-fchange"
